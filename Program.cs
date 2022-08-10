@@ -1,26 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Diagnostics;
-using System.IO;
-using System.Threading;
-using System.Collections.ObjectModel;
-using System.Globalization;
-using System.Net;
-
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
 
 class TestClass
 {
     public static void Test()
     {
         var data = JObject.Parse(GetJson());
-        var values = (JArray)data["data"]["values"];
+        var values = (JArray)data["data"]?["values"];
         var valCount = values.Count();
 
         // Create JSON result using a string
