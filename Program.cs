@@ -22,9 +22,15 @@ class TestClass
         var data = JObject.Parse(GetJson());
         var values = (JArray)data["data"]["values"];
         var valCount = values.Count();
-        
+
+        // Create JSON result using a string
         var json = "{ \"totalCount\": " + valCount + " }";
-        Console.Write(json);
+        Console.WriteLine($"JSON string: {json}");
+
+        // Create JSON result using JObject
+        var jo = new JObject();
+        jo.Add("totalCount", valCount);
+        Console.WriteLine($"JSON object: {jo}");
     }
 
     static string GetJson()
