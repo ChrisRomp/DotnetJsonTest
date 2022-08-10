@@ -29,6 +29,7 @@ class TestClass
 
     static string GetJson()
     {
+        // PASTE JSON HERE - USE "" FOR QUOTES
         var json = @"{
     ""status"": 200,
     ""type"": ""Success"",
@@ -54,7 +55,7 @@ class TestClass
             ""pageNum"": 1
         }
     }
-}"; // PASTE JSON HERE - USE "" FOR QUOTES
+}";
         return json;
     }
 }
